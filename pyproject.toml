@@ -1,0 +1,49 @@
+[project]
+name = "pydantic-settings-env-example"
+version = "0.1.0"
+description = "Pydantic-settings .env.example creator"
+authors = [
+    { email = "alex.thunder@tut.by" },
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+select = [
+   "C90",    # mccabe
+   "I",      # isort
+   "DJ",     # flake8-django
+   "N",      # pep8-naming
+   "UP",     # pyupgrade
+   "S",      # bandit
+   "BLE",    # flake8-blind-except
+   "B",      # bugbear
+   "C4",     # comprehensions
+   "PIE",    # flake8-pie
+   "PT",     # flake8-pytest-style
+   "PL",     # Pylint
+   "SLF",    # flake8-self
+   "SIM",    # flake8-simplify
+   "ARG",    # flake8-unused-argument
+   "ERA",    # eradicate commented out code
+   "TRY",    # tryceratops
+   "F401",
+]
+
+
+[tool.ruff.lint.flake8-quotes]
+inline-quotes = 'double'
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
