@@ -1,13 +1,12 @@
 from inspect import isclass
-import sys
-from typing import IO
+from typing import IO, Optional, Union
 
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings
 
 
 class InputData(BaseModel):
-    source: type[BaseModel | BaseSettings]
+    source: type[Union[BaseModel, BaseSettings]]
 
 
 class SharedData(BaseModel):
@@ -16,7 +15,7 @@ class SharedData(BaseModel):
 
 class EnvItem(BaseModel):
     name: str
-    comment: str | None = None
+    comment: Optional[str] = None
 
     shared_data: SharedData
 

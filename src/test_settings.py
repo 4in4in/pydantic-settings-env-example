@@ -1,4 +1,5 @@
 from enum import Enum
+from typing import Optional
 
 from pydantic import BaseModel
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -14,7 +15,7 @@ class TestEnum(str, Enum):
 
 class TestSettings(BaseSettings):
     integer: int
-    optional_string: str | None = None
+    optional_string: Optional[str] = None
 
     nested: NestedSettings
     enum: TestEnum

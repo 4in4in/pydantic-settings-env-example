@@ -1,0 +1,21 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: formatting
+        name: Apply formatting and fixes
+        entry: 'bash -c "ruff format . && ruff check --fix ."'
+        language: system
+        pass_filenames: false
+        require_serial: true
+    -   id: check_formatter
+        name: Check python formatting
+        entry: 'ruff format --check .'
+        language: system
+        pass_filenames: false
+        require_serial: true
+    -   id: check_linter
+        name: Check with linter
+        entry: 'ruff check .'
+        language: system
+        pass_filenames: false
+        require_serial: true
